@@ -35,7 +35,7 @@ html = '''
 		<title>Clickjacking Test IT20023614</title>
 		<style>
 		body {
- 		 background-color: #301934;
+ 		 background-color: black;
         align-items: center;
 		}
 
@@ -79,7 +79,7 @@ html = '''
 html2 = '''
 <html>
 	<div style="opacity: 1.0; left: 10px; top: 50px; background: PapayaWhip; font-weight: bold;">
-		<center><a href="#">THIS IS AN EXAMPLE CLICKJACKING IFRAME AND LINK</a>
+		<center><a href="solutions.html" target="_blank">THIS IS AN EXAMPLE CLICKJACKING IFRAME AND LINK (-CLICK HERE FOR SOLUTIONS-)</a>
 		<br>(Normally invisible)</center>
 	</div>
 </html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLUTIONS</title>
+</head>
+<body style="background-color: black; text-align: center; ">
+    <pre style="color: white;">
+        ,---.'|                             ,--.         ,---._                                   ,--.                      
+        ,----..  |   | :      ,---,  ,----..     ,--/  /|       .-- -.' \    ,---,         ,----..     ,--/  /|    ,---,.,-.----.    
+       /   /   \ :   : |   ,`--.' | /   /   \ ,---,': / '       |    |   :  '  .' \       /   /   \ ,---,': / '  ,'  .' |\    /  \   
+      |   :     :|   ' :   |   :  :|   :     ::   : '/ /        :    ;   | /  ;    '.    |   :     ::   : '/ / ,---.'   |;   :    \  
+      .   |  ;. /;   ; '   :   |  '.   |  ;. /|   '   ,         :        |:  :       \   .   |  ;. /|   '   ,  |   |   .'|   | .\ :  
+      .   ; /--` '   | |__ |   :  |.   ; /--` '   |  /          |    :   ::  |   /\   \  .   ; /--` '   |  /   :   :  |-,.   : |: |  
+      ;   | ;    |   | :.'|'   '  ;;   | ;    |   ;  ;          :         |  :  ' ;.   : ;   | ;    |   ;  ;   :   |  ;/||   |  \ :  
+      |   : |    '   :    ;|   |  ||   : |    :   '   \         |    ;   ||  |  ;/  \   \|   : |    :   '   \  |   :   .'|   : .  /  
+      .   | '___ |   |  ./ '   :  ;.   | '___ |   |    '    ___ l         '  :  | \  \ ,'.   | '___ |   |    ' |   |  |-,;   | |  \  
+      '   ; : .'|;   : ;   |   |  ''   ; : .'|'   : |.  \ /    /\    J   :|  |  '  '--'  '   ; : .'|'   : |.  \'   :  ;/||   | ;\  \ 
+      '   | '/  :|   ,/    '   :  |'   | '/  :|   | '_\.'/  ../  `..-    ,|  :  :        '   | '/  :|   | '_\.'|   |    \:   ' | \.' 
+      |   :    / '---'     ;   |.' |   :    / '   : |    \    \         ; |  | ,'        |   :    / '   : |    |   :   .':   : :-'   
+       \   \ .'            '---'    \   \ .'  ;   |,'     \    \      ,'  `--''           \   \ .'  ;   |,'    |   | ,'  |   |.'     
+        `---`                        `---`    '---'        "---....--'                     `---`    '---'      `----'    `---'       
+                                                                                                                                     
+    </pre>
+    <pre style="color: bisque;">
+                                                                                   
+ ,---.   ,-----. ,--.   ,--. ,--.,--------.,--. ,-----. ,--.  ,--. ,---.   
+ '   .-' '  .-.  '|  |   |  | |  |'--.  .--'|  |'  .-.  '|  ,'.|  |'   .-'  
+ `.  `-. |  | |  ||  |   |  | |  |   |  |   |  ||  | |  ||  |' '  |`.  `-.  
+ .-'    |'  '-'  '|  '--.'  '-'  '   |  |   |  |'  '-'  '|  | `   |.-'    | 
+ `-----'  `-----' `-----' `-----'    `--'   `--' `-----' `--'  `--'`-----'  
+                                                                            
+ 
+    </pre>
+<br>
+<br>
+<h2 style="color: aqua; text-align: left; font-family: 'Courier New', monospace; font-size: 40px;"  >CLICKJACKING ?</h2>
+<p style="  text-align: justify; text-justify: inter-word; color: aqua; padding:10px 150px 15px 150px; border: 2px solid red; border-radius: 10px;  font-family: 'Courier New', monospace; font-size: 20px;" >
+    Attackers utilize numerous translucent or opaque layers to fool users into clicking a button or link on another website 
+    that they intended to click on the top-level page, which is known as a "UI redress attack." In this case, the attacker is "hijacking" 
+    clicks intended for their website and redirecting them to another page, most likely controlled by another application, domain, or both. 
+
+    Keystrokes may be intercepted in the same way. A user may be tricked into thinking they are inputting their email or bank account 
+    password into a visible frame controlled by the attacker by using a mix of stylesheets, iframes, and text boxes.
+</p>
+<div style=" text-align: justify; text-justify: inter-word; color: white; padding:10px 150px 15px 150px; border: 2px solid black; border-radius: 10px; font-family: 'Courier New', monospace; font-size: 20px;">
+    <p>
+        <h2>To avoid becoming a victim of clickjacking, follow these three steps: </h2>   
+        <ol>
+            <li>Forbidding framing from other domains by sending the correct Content Security Policy (CSP) frame-ancestor directive response headers. 
+                Older HTTP headers, such as X-Frame-Options, are utilized for gradual degradation and older browser support. </li>
+            <li>Authentication cookies should be set with SameSite=Strict (or Lax) unless none are required explicitly (which is rare). </li>
+            <li>Use code to make sure that your current frame is always your highest level window.</li>
+        </ol>
+    </p>
+
+    <h2>Defending with Content Security Policy (CSP) frame-ancestors directive</h2>
+    <p>
+        A browser's ability to display a website as an iframe or a frame may be indicated using the frame-ancestors 
+        directive in a Content-Security-Policy HTTP response header. By ensuring that their material is not integrated onto other websites, 
+        sites may prevent Clickjacking assaults.
+    <p>
+
+</div>
+</body>
+</html>
