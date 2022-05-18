@@ -113,6 +113,7 @@ print('''             ,--,
                                                                                                                                
 ''')
 print('\n[+] Test Complete!')
+print("\n[+]Target URL : ", url)
 print('\n[+] Thanks for using Clickjacking Tester ;-) ')
 print('\n ----------------- Created by Pasindu Wijesinghe (IT20023614) -----------------')
 print('\n')
