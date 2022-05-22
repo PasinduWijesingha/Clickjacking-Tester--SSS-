@@ -2,6 +2,7 @@ from contextlib import redirect_stderr
 import os
 import sys
 import webbrowser
+from urllib.request import urlopen
 
 if len(sys.argv) != 2:
 	print('\n ---------------------------- [Clickjacking Tester] ---------------------------')
@@ -29,6 +30,20 @@ if len(sys.argv) != 2:
 	exit(0)
 
 url = sys.argv[1]
+
+def check(url):
+    ''' check given URL is vulnerable or not '''
+
+    try:
+        if "http" not in url: url = "http://" + url
+
+        data = urlopen(url,timeout=3)
+        headers = data.info()
+
+        if not "X-Frame-Options" in headers: return False
+        if not "Content-Security-Policy" in headers: return False
+
+    except: return True
 
 html = '''
 <html>
@@ -94,6 +109,8 @@ with open(cjt, 'w') as t, open (cja, 'w') as a:
 	t.write(html)
 	a.write(html2) 
 
+
+
 webbrowser.open(localurl)
 print('\n ---------------------------- [Clickjacking Tester] ---------------------------')
 print('''             ,--,                                                                                                             
@@ -114,9 +131,20 @@ print('''             ,--,
                                                                                                                                
 ''')
 
-
 print('\n[+] Test Complete!')
-print("\n[+] Target URL : ", url)
+print("\n[+] Target URL : ", url,"\n")
+site = url 
+status = check(site)
+
+if status:
+    print("[+] "+site.split('\n')[0] + " is \t" + " [ VULNERABLE !!! ] ")
+ 
+        
+elif not status: print("[-] "+site.split('\n')[0] + " is \t"+"[ NOT VULNERABLE :-) ]")
+else: print('\n Program Error !!! Try again. \n')
+
+
+
 print('\n[+] Thanks for using Clickjacking Tester ;-) ')
 print('\n ----------------- Created by Pasindu Wijesinghe (IT20023614) -----------------')
 print('\n')
