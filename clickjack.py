@@ -1,10 +1,11 @@
+from contextlib import redirect_stderr
 import os
 import sys
 import webbrowser
 
 if len(sys.argv) != 2:
 	print('\n ---------------------------- [Clickjacking Tester] ---------------------------')
-	print('''             ,--,                                                                                                             
+	print('''            ,--,                                                                                                             
            ,---.'|                             ,--.         ,---._                                   ,--.                      
   ,----..  |   | :      ,---,  ,----..     ,--/  /|       .-- -.' \    ,---,         ,----..     ,--/  /|    ,---,.,-.----.    
  /   /   \ :   : |   ,`--.' | /   /   \ ,---,': / '       |    |   :  '  .' \       /   /   \ ,---,': / '  ,'  .' |\    /  \   
@@ -112,8 +113,10 @@ print('''             ,--,
   `---`                        `---`    '---'        "---....--'                     `---`    '---'      `----'    `---'       
                                                                                                                                
 ''')
+
+
 print('\n[+] Test Complete!')
-print("\n[+]Target URL : ", url)
+print("\n[+] Target URL : ", url)
 print('\n[+] Thanks for using Clickjacking Tester ;-) ')
 print('\n ----------------- Created by Pasindu Wijesinghe (IT20023614) -----------------')
 print('\n')
